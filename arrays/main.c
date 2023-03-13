@@ -39,7 +39,6 @@ void displayArray(struct Array arr){
 }
 
 void insert_in_array(struct Array arr, int index, int element){
-    arr.arr_size = arr.arr_size++; // increase size - example already has 10 elements populated
     for(int i=arr.arr_length; i>=index; i--){
         arr.pointer_to_arr[i] = arr.pointer_to_arr[i-1]; //move element at index by 1
     }
