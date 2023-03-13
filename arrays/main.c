@@ -11,6 +11,7 @@ struct Array{ // array struct
 
 };
 void displayArray(struct Array arr); // display arr contents
+void insert_in_array(struct Array arr, int index, int element); //insert in array at a given index
 
 int main() {
     struct Array arr;
