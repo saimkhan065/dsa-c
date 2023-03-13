@@ -1,5 +1,7 @@
 /*
  * objective : implement arrays using struct
+ * 1. Insert/Add
+ * 2. Delete
  */
 
 #include <stdio.h>
@@ -40,7 +42,7 @@ void displayArray(struct Array arr){
 
 void insert_in_array(struct Array arr, int index, int element){
     for(int i=arr.arr_length; i>=index; i--){
-        arr.pointer_to_arr[i] = arr.pointer_to_arr[i-1]; //move element at index by 1
+        arr.pointer_to_arr[i] = arr.pointer_to_arr[i-1]; //shift array for insert at index
     }
     arr.pointer_to_arr[index] = element;
     arr.arr_length++;
