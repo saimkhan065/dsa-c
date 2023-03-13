@@ -24,6 +24,7 @@ int main() {
     }
 
     displayArray(arr);
+    printf("\nlength of the array: %d", arr.arr_length);
     return 0;
 }
 
@@ -32,3 +33,4 @@ void displayArray(struct Array arr){
         printf("%d\n", arr.pointer_to_arr[i]);
     }
 }
+
