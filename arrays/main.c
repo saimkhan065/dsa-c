@@ -10,11 +10,9 @@ struct Array{ // array struct
     int arr_length;
 
 };
-void displayArray(struct Array arr); // display arr contents
 
-=======
+void displayArray(struct Array arr); // display arr contents
 void insert_in_array(struct Array arr, int index, int element); //insert element in array at given index
->>>>>>> arr-implement
 
 int main() {
     struct Array arr;
@@ -28,12 +26,9 @@ int main() {
     }
 
     displayArray(arr);
-
-=======
     insert_in_array(arr, 1, 99);
     printf("\n");
     displayArray(arr);
->>>>>>> arr-implement
     return 0;
 }
 
@@ -43,8 +38,6 @@ void displayArray(struct Array arr){
     }
 }
 
-
-=======
 void insert_in_array(struct Array arr, int index, int element){
     arr.arr_size = arr.arr_size++; // increase size - example already has 10 elements populated
     for(int i=arr.arr_length; i>=index; i--){
@@ -53,4 +46,4 @@ void insert_in_array(struct Array arr, int index, int element){
     arr.pointer_to_arr[index] = element;
     arr.arr_length++;
 }
->>>>>>> arr-implement
+
