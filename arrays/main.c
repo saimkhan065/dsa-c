@@ -31,7 +31,7 @@ int main() {
     printf("Basic array length: %d\n",arr.arr_length);
     displayArray(arr);
     insert_in_array(arr, 1, 99);
-    delete_from_array(arr, 1);
+    delete_from_array(arr, 2);
     return 0;
 }
 
