@@ -1,5 +1,7 @@
 /*
  * Objective: 1. implement linked list
+ *            2. display linked list
+ *            3. to be continued - add comments as I understand this concept clearly.
  */
 #include <stdio.h>
 #include <stdlib.h>
