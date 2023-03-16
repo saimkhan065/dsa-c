@@ -1,0 +1,9 @@
+# ninja log v5
+0	67	7007058825992314	CMakeFiles/linked_list.dir/main.c.obj	884b5d78c2611b7f
+68	153	7007058826825731	linked_list.exe	dadef348ca023237
+1	53	7007059417430047	CMakeFiles/linked_list.dir/main.c.obj	884b5d78c2611b7f
+53	114	7007059418019089	linked_list.exe	dadef348ca023237
+1	51	7007060112858323	CMakeFiles/linked_list.dir/main.c.obj	884b5d78c2611b7f
+51	111	7007060113430681	linked_list.exe	dadef348ca023237
+2	50	7007060236305882	CMakeFiles/linked_list.dir/main.c.obj	884b5d78c2611b7f
+50	108	7007060236861772	linked_list.exe	dadef348ca023237
