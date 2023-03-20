@@ -30,4 +30,11 @@ void display_stack(struct stack stack){
     }
 }
 
-
+void push_stack(struct stack *stack, int element){
+    if(stack->top == stack->size-1){
+        printf("Stack overflow");
+    }else{
+        stack->top++;
+        stack->pointer_to_stack_array[stack->top] = element;
+    }
+}
