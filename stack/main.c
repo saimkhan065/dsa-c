@@ -14,7 +14,17 @@ void display_stack(struct stack stack); //display stack
 void push_stack(struct stack *stack, int element); // push an element in stack
 
 int main() {
-    printf("Hello, World!\n");
+    struct stack st;
+    create_stack(&st);
+    //------stack push--------------
+    push_stack(&st, 10);
+    push_stack(&st, 11);
+    push_stack(&st, 12);
+    push_stack(&st, 13);
+    push_stack(&st, 14);
+    push_stack(&st, 15);
+    //------stack push--------------
+    display_stack(st);
     return 0;
 }
 
@@ -25,7 +35,7 @@ void create_stack(struct stack *stack){
 }
 
 void display_stack(struct stack stack){
-    for(int i=0; i>=0; i--){
+    for(int i=stack.top; i>=0; i--){
         printf("%d\n", stack.pointer_to_stack_array[i]);
     }
 }
