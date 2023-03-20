@@ -1,5 +1,8 @@
 /*
  * objective 1: implement stack
+ *           2: implement push function
+ *           3: implement display function
+ *           4: implement pop function
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,6 +15,7 @@ struct stack{
 void create_stack(struct stack *stack); //initialise a stack
 void display_stack(struct stack stack); //display stack
 void push_stack(struct stack *stack, int element); // push an element in stack
+void pop_stack(struct stack *stack); // pop element from stack
 
 int main() {
     struct stack st;
@@ -23,7 +27,12 @@ int main() {
     push_stack(&st, 13);
     push_stack(&st, 14);
     push_stack(&st, 15);
-    //------stack push--------------
+    //------------------------------
+    display_stack(st);
+    //------stack pop---------------
+    pop_stack(&st);
+    //------------------------------
+    printf("\nPOP\n");
     display_stack(st);
     return 0;
 }
@@ -46,5 +55,13 @@ void push_stack(struct stack *stack, int element){
     }else{
         stack->top++;
         stack->pointer_to_stack_array[stack->top] = element;
+    }
+}
+
+void pop_stack(struct stack *stack){
+    if(stack->top == -1)
+        printf("Stack Empty");
+    else{
+        stack->top--;
     }
 }
