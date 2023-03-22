@@ -1,3 +1,3 @@
-C:/Users/Saim/CLionProjects/dsa/queue/cmake-build-debug/CMakeFiles/queue.dir
-C:/Users/Saim/CLionProjects/dsa/queue/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Saim/CLionProjects/dsa/queue/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/mastmithun/CLionProjects/dsa/queue/cmake-build-debug/CMakeFiles/queue.dir
+/Users/mastmithun/CLionProjects/dsa/queue/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/mastmithun/CLionProjects/dsa/queue/cmake-build-debug/CMakeFiles/rebuild_cache.dir

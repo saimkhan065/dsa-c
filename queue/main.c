@@ -1,3 +1,6 @@
+/*
+ * Objective: 1. implement queue 
+ */
 #include <stdio.h>
 
 int main() {
