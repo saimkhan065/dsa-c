@@ -18,6 +18,8 @@ int main() {
     struct queue q;
     create_queue(&q, 10);
     enqueue(&q, 1);
+    dequeue(&q);
+    dequeue(&q);
     return 0;
 }
 
@@ -34,6 +36,14 @@ void enqueue(struct queue *q, int element){
     else{
         q->rear++;
         q->pointer_to_array[q->rear] = element;
-        printf("test run enqueue success");
+    }
+}
+
+void dequeue(struct queue *q){
+    if (q->front == q->rear)
+        printf("queue empty\n");
+    else{
+        q->front++;
+        printf("queue not empty\n");
     }
 }
