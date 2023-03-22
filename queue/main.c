@@ -19,16 +19,21 @@ void display(struct queue q);
 int main() {
     struct queue q;
     create_queue(&q, 10);
+    //-------enqueue---------
     enqueue(&q, 1);
     enqueue(&q, 2);
     enqueue(&q, 3);
     enqueue(&q, 4);
     enqueue(&q, 5);
     display(q);
+    //-------enqueue---------
+
+    //-------dequeue---------
     printf("--dequeue--\n");
     dequeue(&q);
     dequeue(&q);
     display(q);
+    //-------dequeue---------
     return 0;
 }
 
