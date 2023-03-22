@@ -12,10 +12,12 @@ struct queue{
 };
 
 void create_queue(struct queue *q, int size);
-
+void enqueue(struct queue *q ,int element);
+void dequeue(struct queue *q);
 int main() {
     struct queue q;
     create_queue(&q, 10);
+    enqueue(&q, 1);
     return 0;
 }
 
@@ -24,5 +26,14 @@ void create_queue(struct queue *q, int size){
     q->front = -1;
     q->rear = -1;
     q->pointer_to_array = (int *) malloc(q->size * sizeof(int));
-    printf("function run success!"); // check to see if any error rn
+}
+
+void enqueue(struct queue *q, int element){
+    if (q->rear == q->size-1 )
+        printf("Overflow. Queue Full.");
+    else{
+        q->rear++;
+        q->pointer_to_array[q->rear] = element;
+        printf("test run enqueue success");
+    }
 }
