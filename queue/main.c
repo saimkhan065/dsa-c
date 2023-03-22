@@ -14,12 +14,21 @@ struct queue{
 void create_queue(struct queue *q, int size);
 void enqueue(struct queue *q ,int element);
 void dequeue(struct queue *q);
+void display(struct queue q);
+
 int main() {
     struct queue q;
     create_queue(&q, 10);
     enqueue(&q, 1);
+    enqueue(&q, 2);
+    enqueue(&q, 3);
+    enqueue(&q, 4);
+    enqueue(&q, 5);
+    display(q);
+    printf("--dequeue--\n");
     dequeue(&q);
     dequeue(&q);
+    display(q);
     return 0;
 }
 
@@ -44,6 +53,11 @@ void dequeue(struct queue *q){
         printf("queue empty\n");
     else{
         q->front++;
-        printf("queue not empty\n");
+    }
+}
+
+void display(struct queue q){
+    for(int i = q.front+1; i<= q.rear; i++){
+        printf("%d\n", q.pointer_to_array[i]);
     }
 }
