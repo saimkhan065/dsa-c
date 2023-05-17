@@ -1,46 +1,52 @@
-/*
- * Objective: 1. implement linked list
- *            2. display linked list
- *            3. to be continued - add comments as I understand this concept clearly.
- */
+
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {
-    int element;
-    struct node *next_node_pointer;
-}*first_node_pointer=NULL;
 
-void create_node(int a[], int n);
-void display_linked_list(struct node *p);
 
+
+typedef struct Node{
+    int data;
+    struct Node *ptrNextNode;
+}Node, *NodePtr;
+
+NodePtr createNode(int element);
+NodePtr addNode(int element);
+void displayNode(NodePtr nodePtr);
 
 int main() {
-    int a[] = {1, 2, 3, 4, 5};
-    create_node(a, 5);
-    display_linked_list(first_node_pointer);
+    int listSize;
+    NodePtr firstNode, secondNode, thirdNode;
+    firstNode = createNode(10);
+    secondNode = createNode(20);
+    firstNode->ptrNextNode = secondNode;
+    thirdNode = createNode(30);
+    secondNode->ptrNextNode = thirdNode;
+
+    displayNode(firstNode);
+    displayNode(secondNode);
+    displayNode(thirdNode);
     return 0;
 }
 
-void create_node(int a[], int n){
-    struct node *temporary_node_pointer, *last_node_pointer;
-    first_node_pointer = (struct node *) malloc(sizeof(struct node));
-    first_node_pointer->element = a[0];
-    first_node_pointer->next_node_pointer = NULL;
-    last_node_pointer = first_node_pointer;
-
-    for(int i=1; i<n; i++){
-        temporary_node_pointer = (struct node *)malloc(sizeof(struct node));
-        temporary_node_pointer->element = a[i];
-        temporary_node_pointer->next_node_pointer = NULL;
-        last_node_pointer->next_node_pointer = temporary_node_pointer;
-        last_node_pointer = temporary_node_pointer;
-    }
+NodePtr createNode(int element){
+   NodePtr ptr;
+    ptr = (NodePtr) malloc(sizeof (Node));
+    ptr->data = element;
+    ptr->ptrNextNode = NULL;
+    return ptr;
 }
 
-void display_linked_list(struct node *p){
-    while(p){
-        printf("%d\t", p->element);
-        p=p->next_node_pointer;
-    }
+void displayNode(NodePtr nodePtr){
+    printf("Data at Node: %d\n", nodePtr->data);
+    printf("Current Addr: %p\n", nodePtr);
+    printf("Next Addr: %p\n", nodePtr->ptrNextNode);
+}
+
+NodePtr addNode(int element){
+    NodePtr ptr;
+    ptr = (NodePtr) malloc(sizeof (Node));
+    ptr->data = element;
+    ptr->ptrNextNode = NULL;
+    return ptr;
 }
