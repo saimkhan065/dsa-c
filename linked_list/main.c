@@ -8,46 +8,44 @@
 
 typedef struct node{
     int data;
-    struct node* next;
-} *Node;
+    struct node* next; // pointer to a struct node data type
+}*NodePtr;
 
-void addNode(Node* head, int data);
-void displayList(Node head);
+void addNodeAtEnd(NodePtr *head, int data);
+void printList(NodePtr head);
 
 int main() {
-    /*
-     * to add a node...
-     * 1. need to maintain a ptr to first node (head)
-     * 2. need a ptr that starts at head but can iterate(nodePtr)
-     */
-    Node head=NULL;
-    addNode(&head, 1);
-    addNode(&head, 2);
-    addNode(&head, 3);
-    displayList(head);
+
+    NodePtr head = NULL;
+    addNodeAtEnd(&head, 10);
+    addNodeAtEnd(&head, 20);
+    addNodeAtEnd(&head, 30);
+    addNodeAtEnd(&head, 40);
+    addNodeAtEnd(&head, 50);
+    printList(head);
+    free(head);
     return 0;
 }
 
-void addNode(Node* head, int data){
-    Node nodePtr = malloc(sizeof(Node));
-    nodePtr->data = data;
-    nodePtr->next=NULL;
+void addNodeAtEnd(NodePtr *head, int data){
+    NodePtr newNode = malloc(sizeof(NodePtr));
+    newNode->data = data;
+    newNode->next = NULL;
     if (*head == NULL){
-        *head = nodePtr;
-        printf("Head was null. Creating first node.\n");
-        printf("nodePtr->data: %d\n", nodePtr->data);
-        printf("nodePtr->next: %p\n", nodePtr->next);
+        *head = newNode;
         return;
     }
-    Node last = *head;
-    while(last->next != NULL)
-        last = last->next;
-    last->next = nodePtr;
+    NodePtr lastNode = *head;
+    while(lastNode->next != NULL)
+        lastNode = lastNode->next;
+    lastNode->next = newNode;
 }
-void displayList(Node head){
-    Node temp = head;
-    while (temp!=NULL){
-        printf("\nData: %d Curr Addr: %p Next Addr: %p", temp->data, temp ,temp->next);
-        temp=temp->next;
+
+void printList(NodePtr head){
+    int count = 1;
+    while(head!=NULL){
+        printf("Node: %d Value: %d Current: %p Next: %p\n",count, head->data, head, head->next);
+        head = head->next;
+        count++;
     }
 }
